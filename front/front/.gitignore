@@ -1,0 +1,75 @@
+# front/front 项目专用 .gitignore
+
+# ========== Node.js 项目通用规则 ==========
+
+# 依赖包
+node_modules/
+
+# 构建输出
+dist/
+build/
+out/
+
+# 缓存文件
+.cache/
+.parcel-cache/
+.eslintcache/
+
+# 环境变量文件
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 日志文件
+*.log
+logs/
+
+# 临时文件
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+
+# ========== 操作系统文件 ==========
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ========== IDE 配置 ==========
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+*~
+
+# ========== 测试覆盖率 ==========
+coverage/
+.nyc_output/
+
+# ========== 包管理器文件（可选，根据团队规范决定是否忽略）
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# ========== 前端框架特定 ==========
+# Vue.js
+.vuepress/dist/
+
+# React/Next.js
+.next/
+
+# Nuxt.js
+.nuxt/
+
+# ========== 确保重要文件不被忽略 ==========
+!.gitignore
+!README.md

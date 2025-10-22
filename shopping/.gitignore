@@ -1,0 +1,103 @@
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/tmp/
+
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# Package Files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# IDE files
+.idea/
+*.iws
+*.iml
+*.ipr
+.vscode/
+.settings/
+.project
+.classpath
+.factorypath
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Build output directories
+build/
+dist/
+out/
+
+# Database files
+*.db
+*.sqlite
+*.h2.db
+
+# Application properties with sensitive data
+application*.properties
+application*.yml
+
+# Spring Boot specific
+.apt_generated
+.springBeans
+.sts4-cache
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/nbdist/
+/.nb-gradle/
+
+# Eclipse
+.metadata/
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+
+# Maven Wrapper
+.mvn/wrapper/maven-wrapper.jar
+
+# Exceptions for source code
+!**/src/main/**
+!**/src/test/**
+
+# Documentation
+HELP.md
+
+# Temporary files
+*.tmp
+*.temp
+
+# Runtime data
+logs/
+
+# Gradle (if used)
+.gradle/
+
+# Maven (keep this for backward compatibility)
+target/

@@ -1,0 +1,151 @@
+# Project-paper 项目根目录 .gitignore
+# 适用于整个项目，包括 admin, front, shopping 子项目
+
+# ========== 通用忽略规则 ==========
+
+# 操作系统生成的文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE 配置文件
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# 日志文件
+*.log
+logs/
+
+# 临时文件
+*.tmp
+*.temp
+*.bak
+
+# ========== Java/Maven 项目相关 ==========
+
+# Maven 构建输出
+target/
+build/
+
+# 编译产物
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven 相关文件
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+
+# ========== 前端项目相关 ==========
+
+# Node.js 依赖
+node_modules/
+
+# 构建输出
+.next/
+.nuxt/
+dist/
+build/
+out/
+
+# 缓存文件
+.cache/
+.parcel-cache/
+
+# 包管理器文件
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# 环境变量文件
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ========== 数据库相关 ==========
+
+# 数据库文件
+*.db
+*.sqlite
+*.h2.db
+
+# ========== 文档和报告 ==========
+
+# 测试报告
+coverage/
+.nyc_output/
+
+# 文档生成
+site/
+docs/_build/
+
+# ========== 特定 IDE 配置 ==========
+
+# Eclipse
+.metadata/
+bin/
+.settings/
+.classpath
+.project
+.factorypath
+
+# NetBeans
+nbproject/private/
+nbbuild/
+nbdist/
+.nb-gradle/
+
+# IntelliJ IDEA
+*.iws
+*.iml
+*.ipr
+
+# ========== 项目特定忽略 ==========
+
+# 购物系统 (shopping) 相关
+shopping/target/
+shopping/.mvn/tmp/
+
+# 前端系统 (front) 相关
+front/node_modules/
+front/.next/
+front/dist/
+
+# 后台系统 (admin) 相关
+admin/node_modules/
+admin/.next/
+admin/dist/
+admin/admin/node_modules/
+admin/admin/dist/
+admin/admin/build/
+
+# ========== 保留重要文件 ==========
+
+# 确保源代码不被忽略
+!**/src/main/**
+!**/src/test/**
+
+# 确保配置文件不被忽略
+!**/src/main/resources/**
+
+# 确保 Maven Wrapper 不被忽略
+!.mvn/wrapper/maven-wrapper.jar
+
+# 确保必要的文档不被忽略
+!README.md
+!HELP.md
