@@ -70,7 +70,8 @@ CREATE TABLE `address` (
   `name` varchar(200) NOT NULL COMMENT '收货人',
   `phone` varchar(200) NOT NULL COMMENT '电话',
   `isdefault` varchar(200) NOT NULL COMMENT '是否默认地址[是/否]',
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  CONSTRAINT `fk_address_user` FOREIGN KEY (`userid`) REFERENCES `yonghu`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='地址';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -102,7 +103,9 @@ CREATE TABLE `cart` (
   `buynumber` int(11) NOT NULL COMMENT '购买数量',
   `price` double DEFAULT NULL COMMENT '单价',
   `goodtype` varchar(200) DEFAULT NULL COMMENT '商品类型',
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  CONSTRAINT `fk_cart_user` FOREIGN KEY (`userid`) REFERENCES `yonghu`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_cart_goods` FOREIGN KEY (`goodid`) REFERENCES `yaopinxinxi`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='购物车表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -212,7 +215,9 @@ CREATE TABLE `discussyaopinxinxi` (
   `nickname` varchar(200) DEFAULT NULL COMMENT '用户名',
   `content` longtext NOT NULL COMMENT '评论内容',
   `reply` longtext COMMENT '回复内容',
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  CONSTRAINT `fk_discuss_goods` FOREIGN KEY (`refid`) REFERENCES `yaopinxinxi`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_discuss_user` FOREIGN KEY (`userid`) REFERENCES `yonghu`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='药品信息评论表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -344,7 +349,9 @@ CREATE TABLE `orders` (
   `shhf` longtext COMMENT '审核回复',
   `role` varchar(200) DEFAULT NULL COMMENT '用户角色',
   PRIMARY KEY (`id`),
-  UNIQUE KEY `orderid` (`orderid`)
+  UNIQUE KEY `orderid` (`orderid`),
+  CONSTRAINT `fk_orders_user` FOREIGN KEY (`userid`) REFERENCES `yonghu`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_orders_goods` FOREIGN KEY (`goodid`) REFERENCES `yaopinxinxi`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='订单';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -407,7 +414,9 @@ CREATE TABLE `storeup` (
   `type` varchar(200) DEFAULT '1' COMMENT '类型',
   `inteltype` varchar(200) DEFAULT NULL COMMENT '推荐类型',
   `remark` varchar(200) DEFAULT NULL COMMENT '备注',
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  CONSTRAINT `fk_storeup_user` FOREIGN KEY (`userid`) REFERENCES `yonghu`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_storeup_goods` FOREIGN KEY (`refid`) REFERENCES `yaopinxinxi`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='收藏表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
